@@ -39,3 +39,5 @@ The lessons are:
       - anatomy of a controller function
       - keywords: @Inject() and others
       - connectors and their crucial importance in our platform architecture
+
+Throughout the resources, I will also be referencing chapters from https://github.com/robertbutacu/bachelor-degree-work.
