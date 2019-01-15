@@ -1,11 +1,11 @@
 package week.one.workshop
 
-class ScalaBasics {
+object ScalaBasics extends App {
   //what is a var/val + difference
 
   //type inference
 
-  //how to declare a function
+  //how to declare a function -> brief discussion about currying
 
   //lazy/eager
 
@@ -14,6 +14,8 @@ class ScalaBasics {
   //class / case class
 
   //trait / abstract class
+
+  //companion objects
 
   //extends, with
 

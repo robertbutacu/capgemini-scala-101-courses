@@ -1,5 +1,5 @@
 package week.one
 
-class Main {
+object Main extends App {
 
 }
