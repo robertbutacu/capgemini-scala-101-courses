@@ -1,3 +1,9 @@
 https://docs.scala-lang.org/tour/basics.html
 https://docs.scala-lang.org/tour/packages-and-imports.html
 https://www.scala-sbt.org/0.13/docs/Command-Line-Reference.html
+
+sbt clean cleanFiles => remove all the compiled classes
+sbt compile          => compiles all the files
+sbt test             => runs all the tests in the project
+
+Commands can be chained -> ie, you can run sbt clean cleanFiles compile test

@@ -62,7 +62,6 @@ object ScalaBasics extends App {
     def h(): Unit = ???
   }
   trait C {
-    def h(): Unit = ???
   }
 
   //extends, with
