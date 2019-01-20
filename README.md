@@ -14,6 +14,8 @@ The lessons are:
       - pureness + referential transparency
       - functions + function composition
       - recursiveness 
+      - higher order functions
+      - ADTs
       - talk about types - generics and relevance
       - why is this relevant? testing and correctness
 
