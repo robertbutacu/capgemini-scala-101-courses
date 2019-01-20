@@ -1,6 +1,73 @@
 package week.one.extra
 
+import java.util.Calendar
+
 object ScalaBasics extends App {
+  //Exercise 1
+/*  lazy val currentTime = Calendar.getInstance().getTime()
+  println(Calendar.getInstance().getTime())
+  Thread.sleep(3000)
+  println(currentTime)
+  Thread.sleep(3000)
+  def callCurrentTime() = Calendar.getInstance().getTime()
+  println(callCurrentTime)
+  Thread.sleep(3000)
+  println(currentTime)
+  Thread.sleep(3000)
+  println(callCurrentTime)*/
+
+  //EXERCISE TWO
+  trait Addable {
+    def addAll(): Int
+  }
+case class CaseClassOne(x: Int, y: Int) extends Addable {
+  override def addAll(): Int = {
+    val result = x + y
+    result
+  }
+
+}
+case class CaseClassTwo(x: Int, y: Int, j: Int) extends Addable{
+  override def addAll(): Int = {
+    val result = x + y + j
+    result
+  }
+}
+  val InstanceOne = CaseClassOne(5, 20)
+  val InstanceTwo = CaseClassTwo(30,20,1)
+  val InstanceOneSister = CaseClassOne(5,20)
+  println(InstanceOne.addAll())
+  println(InstanceTwo.addAll())
+  println(InstanceOne == InstanceOneSister)
+
+class RegClass(x: Int, y: Int) extends Addable{
+  override def addAll(): Int = {
+    val result = x + y
+    result
+  }
+}
+  val regInstance =  new RegClass(10,30)
+  val regInstanceSister = new RegClass(10,30)
+  println(regInstance == regInstanceSister)
+  println(regInstance.hashCode())
+  println(regInstanceSister.hashCode())
+  println(InstanceOne.hashCode())
+  println(InstanceOneSister.hashCode())
+  case class randomCase(){
+    def returnString(): String = {
+      val returnedString = "Returned string!"
+      returnedString
+    }
+    instanceCaseNew = new randomCase().returnString()
+  }
+  object randomCase{
+    def returnObjectString(): String = {
+      val returnedObjectString = "Returned object string!"
+      returnedObjectString
+    }
+    instanceObject = new randomCase().returnString()
+  }
+
   /** Mechanism of lazy and differences between lazy, eager and function
 
      1. Declare 1 lazy variable which holds the current time.
