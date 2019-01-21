@@ -23,6 +23,7 @@ object FunctionalPrinciples extends App {
   // compose them
 
 
+
   // recursiveness + @tailrec
   // modelling every iterative problem as a recursive one
   // function which takes Int and returns a list with elements up to that int
@@ -37,12 +38,16 @@ object FunctionalPrinciples extends App {
   // make it generic
 
 
+
   // higher order functions
   // examples
 
 
+
   // ADTs
   // examples => traffic signaling light
+  // pattern matching on the previous ADT
+
 
   // why is this relevant
   // testing, accuracy, stable
