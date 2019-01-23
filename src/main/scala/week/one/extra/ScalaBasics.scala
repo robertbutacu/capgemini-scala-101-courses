@@ -1,10 +1,11 @@
 package week.one.extra
 
-import java.util.Calendar
+import java.time.LocalDateTime
+import java.util.{Calendar, UUID}
 
 object ScalaBasics extends App {
   //Exercise 1
-/*  lazy val currentTime = Calendar.getInstance().getTime()
+  /*lazy val currentTime = Calendar.getInstance().getTime()
   println(Calendar.getInstance().getTime())
   Thread.sleep(3000)
   println(currentTime)
@@ -25,7 +26,6 @@ case class CaseClassOne(x: Int, y: Int) extends Addable {
     val result = x + y
     result
   }
-
 }
 case class CaseClassTwo(x: Int, y: Int, j: Int) extends Addable{
   override def addAll(): Int = {
@@ -33,7 +33,8 @@ case class CaseClassTwo(x: Int, y: Int, j: Int) extends Addable{
     result
   }
 }
-  val InstanceOne = CaseClassOne(5, 20)
+  val InstanceOne: Addable = CaseClassOne(5, 20)
+
   val InstanceTwo = CaseClassTwo(30,20,1)
   val InstanceOneSister = CaseClassOne(5,20)
   println(InstanceOne.addAll())
@@ -46,6 +47,13 @@ class RegClass(x: Int, y: Int) extends Addable{
     result
   }
 }
+
+  def f(input: Addable): Int = input.addAll()
+
+
+  f(CaseClassOne(1, 2))
+  f(CaseClassOne(1, 2))
+
   val regInstance =  new RegClass(10,30)
   val regInstanceSister = new RegClass(10,30)
   println(regInstance == regInstanceSister)
@@ -53,20 +61,23 @@ class RegClass(x: Int, y: Int) extends Addable{
   println(regInstanceSister.hashCode())
   println(InstanceOne.hashCode())
   println(InstanceOneSister.hashCode())
-  case class randomCase(){
-    def returnString(): String = {
+  case class randomCase(x: String){
+    def xyszdfzsdf(): String = {
       val returnedString = "Returned string!"
       returnedString
     }
-    instanceCaseNew = new randomCase().returnString()
   }
-  object randomCase{
+  object randomCase {
+    def apply(s: String): randomCase = new randomCase(s)
     def returnObjectString(): String = {
       val returnedObjectString = "Returned object string!"
       returnedObjectString
     }
-    instanceObject = new randomCase().returnString()
   }
+
+  randomCase.apply("DZDAS")
+
+  randomCase.returnObjectString()
 
   /** Mechanism of lazy and differences between lazy, eager and function
 
