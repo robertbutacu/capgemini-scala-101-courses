@@ -30,12 +30,16 @@ object FunctionalPrinciples extends App {
   // 3 functions which take 1 string and return a string
   // compose them
 
-  def fone(): String = "Im took out coffe"
-  def ftwo(s: String) = s + "\n Im putting in the machine"
-  def fthree(s: String) = s + "\n Im brewing the coffee"
-  def ffour(s: String) = s + "\n Im drinking coffee"
+  //for function composition, define functions which return other functions
+  // using andThen pipelines the output of the first function to the input of the next function
+  def computationOne= (x: Int) =>  x + 5
+  def computationTwo = (s: Int) => s + 10
+  def computationThree = (s: Int) => s * 15
+  def computationFour = (s: Int) => s / 2
 
+  val bigComputation = computationOne andThen computationTwo andThen computationThree andThen computationFour
 
+  println(bigComputation(19))
   // ADTs - algebraic data type
   // examples => traffic signaling light
   // pattern matching on the previous ADT
