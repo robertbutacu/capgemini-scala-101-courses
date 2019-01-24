@@ -11,6 +11,10 @@ object FunctionalPrinciplesExtra {
   /*
       I) Model a List as an ADT - a list can either contain a Head, which contains an element and another list as tail,
       or it can be an empty List.
+      List[A] =>
+            1. Empty[A]()
+            2. Head[A](elem: A, tail: List[A])
+
 
       After successfully modelled, that, define the following functions on the ADT:
       1. map      -> a function which has 1 parameter f: A => B, whereby f is applied on all elements of a list
