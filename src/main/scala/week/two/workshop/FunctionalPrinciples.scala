@@ -101,6 +101,51 @@ object FunctionalPrinciples extends App {
   // modelling every iterative problem as a recursive one
   // function which takes Int and returns a list with elements up to that int
 
+  /**
+    * By nature, iteration in programming involves side effects:
+    *   For example, for(i = 0; i <= n; i++) {...}
+    *   I is mutable: furthermore, iteration itself hints towards side-effects being performed in the body.
+    *   Examples: modifying a list.
+    *
+    * In order to avoid this, in functional programming, this is usually done with the help of recursion.
+    * Recursion, on a basic mathematical form, is represented by 2 or more forms:
+    *   1. the base case - when should the recursion stop?
+    *   2. other cases where computation happen - most of the time, it's only 1 step which represents the actual computation.
+    *
+    * I won't even be writing any iterations in Scala, since I don't know how, but I will show you how to write recursive functions.
+    * 2 problems will be solved: factorial, and fibonacci sequence.
+    */
+
+  def factorial(n: Int): Int = {
+    // base case
+    if(n == 0) 1
+    /** computation happening: formula for factorial is f(n) = n * f(n-1) * f(n-2) ... f(0)
+      * In our code, n represents the actual n, while factorial(n - 1) represents the rest of the result ie f(n-1) * f(n-2) ... f(0)
+    */
+    else n * factorial(n - 1)
+  }
+
+
+  /**
+    Fibonacci is an interesting case where there are 2 base cases, but there's nothing difficult about it.
+   */
+  def fibonnaci(n: Int): Int = {
+    n match {
+      case 0 => 1 // base case
+      case 1 => 1 // base case
+      case e => fibonnaci(e - 1) + fibonnaci(e - 2) // formula for fibonnaci(n) = fibonacci(n-1) + fibonacci(n-2)
+    }
+  }
+
+  /**
+    * Beauty about recursiveness is the fact that it goes relatively close to the mathematical representation.
+    *
+    * An edge case of recursiveness and more importantly, performance optimization, is the fact that all these calls
+    * fill the stack with intermediary calls which could overflow and break the program.
+    * Fortunately, there is one technique to avoid this - and that is tail call elimination done through memoization.
+    * In Scala, this is done through @tailrec - we will talk more about this next week.
+    * For now, the explanation should be enough to solve the exercises.
+    */
 
   // why is this relevant
   // testing, accuracy, stable
