@@ -54,11 +54,6 @@ object FunctionalPrinciples extends App {
   case class Some2(x: Int) extends Option2
   case object None2 extends Option2
 
-  sealed trait List
-  case class Head(h: Int, tail: List) extends List
-  case object EmptyList extends List
-
-
   sealed trait TrafficLight {
     def f(): String = {
       this match {
