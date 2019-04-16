@@ -97,7 +97,7 @@ sealed trait MyList[A] {
 
 
   /*
-    I) Model a List as an ADT - a list can either contain a Head, which contains an element and another list as tail,
+    I) Model a List as an ADT - a  list can either contain a Head, which contains an element and another list as tail,
     or it can be an empty List.
     List[A] =>
           1. Empty[A]()
