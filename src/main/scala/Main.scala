@@ -1,5 +1,4 @@
-import week.two.extra.{Branch, EmptyLeaf}
-import week.two.{Empty, Head}
+import week.two.extra._
 
 object Main extends App {
 

@@ -1,6 +1,6 @@
 package week.two.extra
 
-import week.two.{Empty, MyList}
+import week.two.extra.{Empty, MyList}
 
 sealed trait MyTree[A] {
   def map[B](f: A => B): MyTree[B]= {

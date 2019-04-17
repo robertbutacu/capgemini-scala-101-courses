@@ -148,4 +148,13 @@ object FunctionalPrinciples extends App {
 
   // why is this relevant
   // testing, accuracy, stable
+
+  println((0 to 100).collect {
+    case even if even % 2 == 0 => even
+    case divv if divv % 3 == 0 => divv
+  })
+
+  import week.two.extra.MyList
+  println(MyList.fromList((0 to 100).toList).zipWithIndex)
 }
+
