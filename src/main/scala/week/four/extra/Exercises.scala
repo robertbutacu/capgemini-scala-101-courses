@@ -38,5 +38,7 @@ object Exercises extends App {
 
   abstract class User(firstname: String, lastname: String, password: String, bearerToken: String, expirationTime: Instant)
 
-  def login(firstname: String, lastname: String, password: String, knownUsers: List[User]): Option[User] = ???
+  def register(firstname: String, lastname: String, password: String): Option[User] = ???
+
+  def login(user: User, knownUsers: List[User]): Option[User] = ???
 }
