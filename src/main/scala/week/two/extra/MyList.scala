@@ -1,4 +1,4 @@
-package week.two
+package week.two.extra
 
 
 sealed trait MyList[A] {
@@ -54,7 +54,7 @@ sealed trait MyList[A] {
   }
   def foldLeft[B](startingPoint: B)(f: (B, A) => B): B = {
     this match {
-        case e: Empty[B] => startingPoint
+      case e: Empty[B] => startingPoint
       case h: Head[A] => h.tail.foldLeft(f(startingPoint, h.elem))(f)
     }
   }
@@ -85,10 +85,19 @@ sealed trait MyList[A] {
   def toList(): List[A] = {
     this.foldLeft(List.empty[A])((acc, curr) =>  acc.+:(curr))
   }
+  def zipWithIndex: MyList[(A, Int)] = {
+    def inner(remainingList: MyList[A], currentIndex: Int, resultSoFar: MyList[(A, Int)]): MyList[(A, Int)] = {
+      remainingList match{
+        case Empty() => resultSoFar
+        case h: Head[A] => inner(h.tail, currentIndex+1, resultSoFar.++((h.elem, currentIndex)))
+      }
+    }
+    inner(this, 0, MyList.empty)
+  }
 
 
   /*
-    I) Model a List as an ADT - a list can either contain a Head, which contains an element and another list as tail,
+    I) Model a List as an ADT - a  list can either contain a Head, which contains an element and another list as tail,
     or it can be an empty List.
     List[A] =>
           1. Empty[A]()
