@@ -1,3 +1,4 @@
+/*
 import week.two.workshop.FunctionalPrinciples.MyTrafficLight
 
 val x = List(1, 2)
@@ -51,3 +52,4 @@ case object test extends TrafficLight
 val mapTest = Map("Witchell" -> "Password", "Witchell96" -> "Passw0rd")
 Yellow.f()
 test.f()
+*/
