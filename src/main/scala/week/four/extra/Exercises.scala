@@ -1,6 +1,7 @@
 package week.four.extra
 
 import java.time.Instant
+import java.util.UUID
 
 object Exercises extends App {
   /**
@@ -36,9 +37,12 @@ object Exercises extends App {
     */
 
 
-  abstract class User(firstname: String, lastname: String, password: String, bearerToken: String, expirationTime: Instant)
+  case class User(firstname: String, lastname: String, password: String, bearerToken: String, expirationTime: Instant)
 
   def register(firstname: String, lastname: String, password: String): Option[User] = ???
 
   def login(user: User, knownUsers: List[User]): Option[User] = ???
+
+  val storage = Map(("Jack", "Witchell") -> ((password: String) => User("jack", "witchell", password, UUID.randomUUID().toString, Instant.now.plusSeconds(300))))
+
 }
